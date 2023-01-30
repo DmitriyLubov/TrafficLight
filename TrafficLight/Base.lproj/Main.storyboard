@@ -62,6 +62,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1rT-Dj-ea0" secondAttribute="trailing" constant="16" id="ubp-8B-pUl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenView" destination="FqG-Fj-aT0" id="yb1-ht-pSR"/>
+                        <outlet property="redView" destination="U2T-8m-0Zh" id="gM5-ut-7AG"/>
+                        <outlet property="switchButton" destination="bQb-Cb-7wC" id="Gfd-3H-S2B"/>
+                        <outlet property="yellowView" destination="Tc0-kD-DPt" id="jfZ-Qd-pPt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
