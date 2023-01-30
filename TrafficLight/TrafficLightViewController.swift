@@ -16,11 +16,6 @@ final class TrafficLightViewController: UIViewController {
     @IBOutlet var switchButton: UIButton!
     
     private let onLight = 1.0
-    private let offLight = 0.3
-    
-    private var radiusView: CGFloat {
-        redView.frame.width / 2
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +24,23 @@ final class TrafficLightViewController: UIViewController {
         switchButton.layer.cornerRadius = 20
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
-        redView.layer.cornerRadius = radiusView
-        yellowView.layer.cornerRadius = radiusView
-        greenView.layer.cornerRadius = radiusView
+        setRadiusViews()
+    }
+    
+    private func setRadiusViews() {
+        let radius = redView.frame.width / 2
+        
+        redView.layer.cornerRadius = radius
+        yellowView.layer.cornerRadius = radius
+        greenView.layer.cornerRadius = radius
     }
     
     private func switchOff() {
+        let offLight = 0.3
+        
         redView.alpha = offLight
         yellowView.alpha = offLight
         greenView.alpha = offLight
