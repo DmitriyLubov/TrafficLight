@@ -15,12 +15,10 @@ final class TrafficLightViewController: UIViewController {
     
     @IBOutlet var switchButton: UIButton!
     
-    private let onLight = 1.0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switchOff()
+        switchOffLight()
         switchButton.layer.cornerRadius = 20
     }
     
@@ -38,7 +36,7 @@ final class TrafficLightViewController: UIViewController {
         greenView.layer.cornerRadius = radius
     }
     
-    private func switchOff() {
+    private func switchOffLight() {
         let offLight = 0.3
         
         redView.alpha = offLight
@@ -46,7 +44,23 @@ final class TrafficLightViewController: UIViewController {
         greenView.alpha = offLight
     }
 
-
+    @IBAction func switchButtonDidTapped() {
+        let onLight = 1.0
+        
+        if redView.alpha == onLight {
+            switchOffLight()
+            yellowView.alpha = onLight
+        } else if yellowView.alpha == onLight {
+            switchOffLight()
+            greenView.alpha = onLight
+        } else {
+            switchOffLight()
+            redView.alpha = onLight
+        }
+        
+        switchButton.setTitle("NEXT", for: .normal)
+    }
+    
     
 }
 

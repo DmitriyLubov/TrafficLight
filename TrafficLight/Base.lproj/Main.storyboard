@@ -49,6 +49,9 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="switchButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="kqa-Zc-j2B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
